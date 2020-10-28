@@ -279,11 +279,11 @@ DEMC.FA <- function(j, theta, theta.ddm.lik, theta.sem.lik, theta.ddm.prior, the
     Psi.valid.new[i] <- 1/rgamma(1, shape = hyp.alpha.psi.post, rate = hyp.beta.psi.post)
   }  
   
-  #-- Solutions for the sign-switching problem should be used here.
+  #-- Solutions to the sign-switching problem should be used here.
   #-- e.g.,
-  if(Lam.valid.new[33, 1] < 0) Lam.valid.new[ , 1] <- -Lam.valid.new[ , 1]
-  if(Lam.valid.new[59, 2] < 0) Lam.valid.new[ , 2] <- -Lam.valid.new[ , 2]
-  if(Lam.valid.new[57, 3] < 0) Lam.valid.new[ , 3] <- -Lam.valid.new[ , 3]
+  if(Lam.valid.new[1, 1] < 0) Lam.valid.new[ , 1] <- -Lam.valid.new[ , 1]  # for the first column of the loading matrix (corresponding to the nondecision time factor)
+  if(Lam.valid.new[2, 2] < 0) Lam.valid.new[ , 2] <- -Lam.valid.new[ , 2]  # for the second column of the loading matrix (corresponding to the initial bias time factor)
+  if(Lam.valid.new[3, 3] < 0) Lam.valid.new[ , 3] <- -Lam.valid.new[ , 3]  # for the third column of the loading matrix (corresponding to the drift rate factor)
 
   theta[Lam.idx, j] <- Lam.valid.new
   theta[Psi.idx, j] <- Psi.valid.new

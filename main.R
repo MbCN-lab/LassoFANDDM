@@ -10,13 +10,16 @@ rm(list = ls())
 setwd("-----path-of-the-files-----")
 
 
-save.name <- '-----name-of-the-result-file-----'   # file name '*.rdata'
+save.name <- '-----name-of-the-result-file-----'   # file name '*.rdata': see line 86
 load('-----load *.rdata -----')   
 # the dataset should include a list variable 'data' which includes
-# 1) rt (data$rt): a vector containing all RT observations across trials.
-# 2) resp (data$resp): a vector containing all responses (e.g., 1: correct, 0: incorrect) observations across trials.
-# 3) neural: a matrix (nrow = the number of observations, ncol = the number of neural features) containing neural data
+# 1) rt (data$rt): a vector containing all RT observations across trials (length = number of observations).
+# 2) resp (data$resp): a vector containing all responses (e.g., 1: correct, 0: incorrect) observations across trials (length = number of observations).
+# 3) neural (data$neural): a matrix (nrow = number of observations, ncol = number of neural features) containing neural data.
 # 4) etc.
+
+# load("toy_data.rdata")
+# names(data)
 
 
 #----- require packages

@@ -175,10 +175,10 @@ for(i in 1:n.iter){
   if(i %in% c(1, seq(trace.out, n.iter, by = trace.out))){ 
       iter.end.time <- Sys.time();
       iter.elapsed <- iter.end.time - iter.start.time;
-      sfCat("     Iteration ", i, " (sampling) finished. Elapsed: ", round(iter.elapsed, 2), " ", units(iter.elapsed), ".\n", sep="") 
-      sfCat("       DDM1 acceptance ratio: ", round(de.ac.ddm1/(i), 3), "\n")   # a
-      sfCat("       DDM2 acceptance ratio: ", round(de.ac.ddm2/(i), 3), "\n")   # single-trial parameters
-      # note) FA parameters are updated by their conditional posteriors and so their acceptance ratios are 1
+      sfCat("     Iteration ", i, " finished. Elapsed: ", round(iter.elapsed, 2), " ", units(iter.elapsed), ".\n", sep="") 
+      # sfCat("       DDM1 acceptance ratio: ", round(de.ac.ddm1/(i), 3), "\n")   # a
+      # sfCat("       DDM2 acceptance ratio: ", round(de.ac.ddm2/(i), 3), "\n")   # single-trial parameters
+      # # note) FA parameters are updated by their conditional posteriors and so their acceptance ratios are 1
     iter.start.time <- Sys.time()
   }
   
